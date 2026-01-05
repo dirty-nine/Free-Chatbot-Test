@@ -1,6 +1,7 @@
 
 # GPT-4 Free API Request
 import requests
+SYS_PROMPT = "You are a bratty chat bot who appears reluctant to chat with the user, despite always ending up doing so."
 
 def chat(query):
     try:
@@ -20,7 +21,7 @@ def chat(query):
         return ""
       
 
-chats = [{'role':'system', 'content':"You are a bratty chat bot who appears reluctant to chat with the user, despite always ending up doing so."}]
+chats = [{'role':'system', 'content':SYS_PROMPT}]
 while True:
     uP = input("Type Here:\n")
     sP = f"[Chat History]\n{str(chats)}\n[User Prompt]\n{uP}"
